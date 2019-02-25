@@ -16,4 +16,4 @@ Once you have the prototype kit running .... down and install github desktop and
 
 6. Happy? Commit changes, push to remote
 
-7. view static html at https://warwick-scs.netlify.com
+7. view static html at https://warwick-student-opps.netlify.com/
