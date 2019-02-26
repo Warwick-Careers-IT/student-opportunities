@@ -1672,6 +1672,45 @@ h5.scs-topic-atoz {
     margin-bottom: 0px;
     font-size: 19px; }
 
+.scs-nav-home-topics {
+  border-left: 1px solid #bfc1c3;
+  background: #dcebef; }
+  .scs-nav-home-topics ul {
+    padding-left: 0px; }
+    .scs-nav-home-topics ul li {
+      list-style: none;
+      position: relative;
+      margin-bottom: 0px; }
+    .scs-nav-home-topics ul p {
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+      color: black;
+      margin-bottom: 2px; }
+    .scs-nav-home-topics ul h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #197B9A; }
+    .scs-nav-home-topics ul a {
+      padding: 2px 30px 2px 5px;
+      text-transform: none;
+      font-size: 16px;
+      line-height: 1.1428571429;
+      position: relative;
+      display: block;
+      text-decoration: none !important; }
+      .scs-nav-home-topics ul a:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -16px;
+        right: 10px;
+        float: right;
+        content: "\203A";
+        font-size: 32px; }
+      .scs-nav-home-topics ul a:hover {
+        background: #b1d3dc; }
+
 /* step layout for topics */
 .scs-c-step-nav-header {
   color: #0b0c0c;
