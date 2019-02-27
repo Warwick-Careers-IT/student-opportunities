@@ -2455,11 +2455,8 @@ h1.guide-topic-title {
   .id7-main-content-area > .id7-main-content {
     padding: 0 20px; }
   .image-container {
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     bottom: 0;
     right: 0;
     display: -webkit-box;
@@ -2513,17 +2510,12 @@ h1.guide-topic-title {
   .course-finder h2 label {
     color: white; }
   .course-finder .form {
-    position: relative;
+    position: absolute;
+    top: 150px;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
     margin: 0 40px; } }
-
-.course-finder .form .twitter-typeahead {
-  width: 100%; }
-
-.course-finder .form .twitter-typeahead + .input-group-btn {
-  vertical-align: top; }
 
 .course-finder .form .tt-input {
   height: 46px;

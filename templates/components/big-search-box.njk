@@ -1,19 +1,43 @@
+
+
+
 <section class="course-finder">
   <div class="image-container">
     <figure id="image1" class="flush-top full-width"><img src="//warwick.ac.uk/study/postgraduate/hp-contents/pg_1170x375_banner_homepage_3.jpg" border="0" alt="Postgraduate study homepage banner - abstract vector triangles in red and purple">
+
+
+
 
 </figure>
   </div>
 
   <div class="form">
-    <form action="//search.warwick.ac.uk/website">
+    <form>
       <h2><label for="course-search">All Warwick opportunities in one place</label> </h2>
-      <h3></h3>
-<input type="hidden" name="source" value="https://warwick.ac.uk/study/postgraduate"> <input type="hidden" name="urlPrefix" value="https://warwick.ac.uk/study/postgraduate/courses"> <input type="hidden" name="fileFormat" value="text/html">
-      <div class="input-group input-group-lg"><input id="course-search" type="search" name="q" class="form-control" placeholder="skills, jobs, experience, bursaries, awards, societies,  sports, volunteering, awards and much more ..."> <span class="input-group-btn"> <button class="btn btn-brand" type="submit">Search</button> </span> </div>
+      <div class="input-group input-group-lg">
+        {% verbatim %}
+        <div id="app">
+          <autocomplete :items="[ 'Sprint Programme', 'Study Happy', 'URSS', 'Warwick in Africa', 'Warwick incubator', 'Work experience', 'Job vacancies', 'Enterprise fund', 'Video editing', 'career guidance', 'Q-step' , 'interview practice' , 'summer internships', 'student societies' , 'volunteering' , 'job search help', 'sports', 'innovation and entrepreneurship programme' , 'mentoring', 'Research student skills programme', 'study abroad' , 'warwick portfolio award', 'warwick inspire', 'presentation skills', 'Numerical skills development' , 'academic writing programme', 'language learning' , 'french' , 'german' , 'Excel' , 'internships', 'programming', 'employer events' , 'careers fairs', 'inspiring women', 'How to find a job in the Games Industry' , 'Delivering effective presentations' , 'Intercultural Awareness Workshop' , 'Confidence and initiative' , 'Pitching your ideas', 'design thinking']" />
+        </div>
+        <script type="text/x-template" id="autocomplete">
+          <div class="autocomplete">
+            <input type="text" @input="onChange" v-model="search" @keyup.down="onArrowDown" @keyup.up="onArrowUp" @keyup.enter="onEnter" />
+            <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
+              <li class="loading" v-if="isLoading">
+                Loading results...
+              </li>
+              <li v-else v-for="(result, i) in results" :key="i" @click="setResult(result)" class="autocomplete-result" :class="{ 'is-active': i === arrowCounter }">
+                {{ result }}
+              </li>
+            </ul>
 
+          </div>
+        </script>
+        {% endverbatim %}
+         <span class="input-group-btn"> <button class="btn btn-brand" type="submit">Go</button> </span>
+
+        </div>
     </form>
-
 
   </div>
 
@@ -21,41 +45,59 @@
 
 
 <style>
-            .course-finder h2 {
-                font-size: 42px;
-                /* ~42px */
-                text-transform: none;
-                font-weight: bold;
-            }
-
-            .form a {
-                color: white;
-                text-decoration-color: white;
-            }
-
-            .form a:hover {
-                color: grey;
-                text-decoration-color: grey
-            }
-
-            .input-group {
-                padding-bottom: 10px;
-            }
-
-            @media (max-width: 768px) {
-                .form a {
-                    color: #323232;
-                    text-decoration-color: #323232;
-                }
-
-                .form a:hover {
-                    color: #999999;
-                    text-decoration-color: #999999
-                }
-
-                .section-links h3 {
-                    padding-left: 10px;
-                }
 
 
-            </style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+
+.autocomplete {
+width: 100%;
+}
+
+.autocomplete input {
+    width: 100%;
+    height: 46px;
+  }
+
+  ul.autocomplete-results {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eeeeee;
+  background-color: #4aae9b;
+  height: 200px;
+  overflow: auto;
+  width: 100%;
+  }
+
+  li.autocomplete-result {
+    list-style: none;
+    text-align: left;
+    padding: 5px 5px;
+    cursor: pointer;
+    background-color: #4aae9b;
+    color: white;
+    height: 40px;
+    margin: 0px;
+  }
+
+  .autocomplete-result.is-active,
+  .autocomplete-result:hover {
+  color: white;
+  }
+
+  .course-finder h2 {
+      font-size: 42px;
+      /* ~42px */
+      text-transform: none;
+      font-weight: bold;
+  }
+
+
+</style>
+
+<script type="text/javascript" src="/static-files/js/opps-search-autocomplete.js"></script>
